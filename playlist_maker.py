@@ -16,9 +16,31 @@ def main():
     print("=" * 50)
 
     # Configuration
-    CLIENT_ID = input("Enter your Spotify Client ID: ").strip()
-    CLIENT_SECRET = input("Enter your Spotify Client Secret: ").strip()
+    CREDENTIALS_FILE = "spotify_credentials.txt"
+    CLIENT_ID = None
+    CLIENT_SECRET = None
     REDIRECT_URI = 'http://localhost:8080'  # Must match Spotify app settings
+
+    # Try to read from credentials file first
+    try:
+        with open(CREDENTIALS_FILE, 'r') as file:
+            for line in file:
+                if line.startswith("Client ID:"):
+                    CLIENT_ID = line.split(":", 1)[1].strip()
+                elif line.startswith("Client Secret:"):
+                    CLIENT_SECRET = line.split(":", 1)[1].strip()
+        if CLIENT_ID and CLIENT_SECRET:
+            print("✓ Found credentials in spotify_credentials.txt")
+        else:
+            print("⚠ spotify_credentials.txt found but missing required fields")
+    except FileNotFoundError:
+        print("No credentials file found - will prompt for manual entry")
+
+    # Prompt if not found in file
+    if not CLIENT_ID:
+        CLIENT_ID = input("Enter your Spotify Client ID: ").strip()
+    if not CLIENT_SECRET:
+        CLIENT_SECRET = input("Enter your Spotify Client Secret: ").strip()
 
     CSV_FILE = 'Copy of LIB 2026 lineup - Sheet3.csv'
 

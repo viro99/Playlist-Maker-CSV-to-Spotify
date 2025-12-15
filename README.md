@@ -45,14 +45,21 @@ This tool reads a CSV file containing artist names and automatically creates a S
    - The CSV should have a header row (e.g., "Artist Name")
    - Each subsequent row should contain one artist name
 
-2. Run the script:
+2. (Optional) Create `spotify_credentials.txt` for convenience:
+   ```
+   Client ID: your_client_id_here
+   Client Secret: your_client_secret_here
+   ```
+   This file is automatically ignored by git for security.
+
+3. Run the script:
    ```bash
    python playlist_maker.py
    ```
 
-3. When prompted:
-   - Enter your Spotify Client ID
-   - Enter your Spotify Client Secret
+4. If credentials weren't in the file, you'll be prompted to enter:
+   - Spotify Client ID
+   - Spotify Client Secret
 
 4. The script will open a browser window for Spotify authentication
    - Log in to Spotify if prompted
