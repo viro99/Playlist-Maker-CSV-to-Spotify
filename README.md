@@ -23,7 +23,7 @@ This tool reads a CSV file containing artist names and automatically creates a S
 3. Fill in the app details:
    - **App name**: Something like "Playlist Maker"
    - **App description**: "Creates playlists from CSV artist lists"
-   - **Redirect URI**: `http://localhost:8080`
+   - **Redirect URI**: `http://127.0.0.1:8080`
 4. Copy your **Client ID** and **Client Secret** - you'll need them to run the script
 
 ## Installation
@@ -94,7 +94,7 @@ Zeds Dead
 
 ### Authentication Issues
 - Verify your Client ID and Client Secret are correct
-- Ensure the Redirect URI in your Spotify app matches `http://localhost:8080`
+- Ensure the Redirect URI in your Spotify app matches `http://127.0.0.1:8080`
 - Try clearing your browser cache for Spotify authentication
 
 ### Rate Limiting

@@ -19,7 +19,7 @@ def main():
     CREDENTIALS_FILE = "spotify_credentials.txt"
     CLIENT_ID = None
     CLIENT_SECRET = None
-    REDIRECT_URI = 'http://localhost:8080'  # Must match Spotify app settings
+    REDIRECT_URI = 'http://127.0.0.1:8080'  # Must match Spotify app settings
 
     # Try to read from credentials file first
     try:

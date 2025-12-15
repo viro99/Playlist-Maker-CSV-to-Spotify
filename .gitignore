@@ -21,4 +21,5 @@ Thumbs.db
 .env
 clientID.txt
 CLIENTID.txt
+spotify_credentials.txt
 *.txt
